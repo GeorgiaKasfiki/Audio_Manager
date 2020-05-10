@@ -1,3 +1,11 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.class
+# Project exclude paths
+/out/

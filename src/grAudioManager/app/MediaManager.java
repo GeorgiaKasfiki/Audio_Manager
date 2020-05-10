@@ -1,7 +1,5 @@
 package grAudioManager.app;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -46,7 +44,7 @@ public class MediaManager {
 
     public int getTotalSize(){
         int totalSize = 0;
-        for (Media m : mediaList){
+        for (Media m : mediaList) {
             totalSize += m.getSize();
         }
         return totalSize;
