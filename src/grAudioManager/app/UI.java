@@ -10,7 +10,8 @@ public class UI {
 
         System.out.println("1. Add new media.\n2. Remove old media.\n3.Display media list." +
                             "\n4.Clear media list.\n5.Total cost.\n6. Total size.\n7.Total duration."+
-                             "\n8. Save.\n9. Load list.\n0. EXIT");
+                            "\n8. Average Duration"+"\n9. Save.\n10. Load list.\n11.Total records."+
+                            "\n12. Find Media \n0. EXIT");
         int choice;
 
         Scanner scanner = new Scanner(System.in);
@@ -24,8 +25,11 @@ public class UI {
                 case 5: return Choice.TOTALCOST;
                 case 6: return Choice.TOTALSIZE;
                 case 7: return Choice.TOTALDURATION;
-                case 8: return Choice.SAVE;
-                case 9: return Choice.LOAD;
+                case 8: return Choice.AVGDURATION;
+                case 9: return Choice.SAVE;
+                case 10: return Choice.LOAD;
+                case 11: return Choice.TOTALRECORDS;
+                case 12: return Choice.FIND;
                 case 0: return Choice.EXIT;
                 default: return Choice.ERROR;
             }
@@ -120,11 +124,19 @@ public class UI {
                 case TOTALDURATION:
                     System.out.println("The total duration is " +manager.getTotalDuration()+" minutes.\n");
                     break;
+                case AVGDURATION:
+                    System.out.println("The average duration is " +manager.getAverageDuration()+ "mins. \n");
+                    break;
                 case SAVE:
                     manager.saveMediaList("MediaList.txt");
                     break;
                 case LOAD:
                     manager.loadMediaList("MediaList.txt");
+                    break;
+                case TOTALRECORDS:
+                    System.out.println("The total amount of records is " +manager.getTotalRecords() +"media files\n");
+                case FIND:
+                    manager.FindMedia();
                     break;
                 case EXIT:
                 case ERROR:

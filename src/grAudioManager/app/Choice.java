@@ -8,8 +8,11 @@ public enum Choice {
     TOTALCOST,
     TOTALSIZE,
     TOTALDURATION,
+    AVGDURATION,
     SAVE,
     LOAD,
+    TOTALRECORDS,
+    FIND,
     EXIT,
     ERROR;
 }

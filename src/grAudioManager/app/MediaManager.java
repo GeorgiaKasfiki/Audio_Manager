@@ -58,6 +58,22 @@ public class MediaManager {
         return totalDuration;
     }
 
+    public double getAverageDuration(){
+        int totalDuration = getTotalDuration();
+        if(mediaList.size() !=0) {
+            double avgDuration = totalDuration / mediaList.size();
+            return avgDuration;
+        }else{
+            double avgDuration = 0;
+            return avgDuration;
+        }
+    }
+
+    public int getTotalRecords(){
+        int sum =mediaList.size();
+        return sum;
+    }
+
     public void saveMediaList(String filename) {
         try {
             PrintWriter printWriter = new PrintWriter( new File(filename));
@@ -82,5 +98,17 @@ public class MediaManager {
                 mediaList.add(media);
             }
         }catch(Exception e){}
+    }
+
+    public void FindMedia(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Give the article you're looking for. ");
+        String article = scanner.toString();
+
+        if (mediaList.indexOf(article) !=0) {
+            System.out.println(mediaList.indexOf(article) +"\n\n");
+        }else {
+            System.out.println("Media not found. \n");
+        }
     }
 }
